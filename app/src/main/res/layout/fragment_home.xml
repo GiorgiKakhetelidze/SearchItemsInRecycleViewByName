@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.HomeFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/searchTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/search"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/searchEditTxtView"
+        app:layout_constraintStart_toStartOf="@id/gdStart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/searchEditTxtView"
+        style="@style/edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="@string/search"
+        app:layout_constraintBottom_toTopOf="@+id/resultTxtView"
+        app:layout_constraintEnd_toEndOf="@id/gdEnd"
+        app:layout_constraintStart_toStartOf="@id/gdStart"
+        app:layout_constraintTop_toBottomOf="@+id/searchTxtView"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/resultTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/all_results"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/recycleView"
+        app:layout_constraintStart_toStartOf="@id/gdStart"
+        app:layout_constraintTop_toBottomOf="@+id/searchEditTxtView"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gdEnd"
+        app:layout_constraintStart_toStartOf="@id/gdStart"
+        app:layout_constraintTop_toBottomOf="@+id/resultTxtView"
+        tools:layout_editor_absoluteX="20dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
